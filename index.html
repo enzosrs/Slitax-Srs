@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Srs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #0f0f1f;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 450px;
+            padding: 25px;
+            background: linear-gradient(145deg, #1a1a2e, #222237);
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(128, 0, 128, 0.8), 0 0 30px rgba(0, 128, 255, 0.6);
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff66ff;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 102, 255, 0.8), 0 0 20px rgba(128, 0, 255, 0.5);
+        }
+
+        .box {
+            margin: 15px 0;
+            padding: 15px;
+            background: linear-gradient(145deg, #191933, #22223d);
+            border-radius: 12px;
+            border: none;
+            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3), inset -4px -4px 8px rgba(50, 50, 70, 0.5);
+            color: #ffffff;
+        }
+
+        #timer {
+            color: #ffb74d;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        #currentResult {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2em;
+            color: #ff66ff;
+            text-shadow: 0 0 8px rgba(255, 102, 255, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .animated {
+            animation: pulse 0.5s ease;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 150px;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background: linear-gradient(145deg, #1b1b2f, #2b2b40);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(128, 0, 255, 0.4), 0 0 20px rgba(128, 0, 255, 0.2);
+        }
+
+        .history-item .period {
+            width: 60%;
+            font-size: 1em;
+            font-weight: bold;
+            color: #ffb3ff;
+            text-shadow: 0 0 5px rgba(255, 102, 255, 0.5);
+        }
+
+        .history-item .result {
+            width: 35%;
+            font-size: 1em;
+            text-align: right;
+            color: #ff66ff;
+            text-shadow: 0 0 5px rgba(128, 0, 255, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>𝐒𝐋𝐈𝐓𝐀𝐗 𝐒𝐑𝐒</h1>
+
+    <div class="box">
+       
+        <div id="periodNumber">Loading...</div>
+    </div>
+
+    <div class="box">
+      
+        <div id="timer">01:00</div>
+    </div>
+
+    <div class="box">
+       
+        <div id="currentResult">Waiting...</div>
+    </div>
+
+    <div class="box">
+        <div>History</div>
+        <div class="history-list" id="history"></div>
+    </div>
+</div>
+
+<script src="App.js"></script>
+
+
+</body>
+</html>
